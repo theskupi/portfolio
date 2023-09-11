@@ -1,0 +1,19 @@
+{
+  "name": "green-gravity",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@radix-ui/themes": "^1.1.2",
+    "astro": "^3.0.12"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}
