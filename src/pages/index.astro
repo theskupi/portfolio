@@ -1,6 +1,7 @@
 ---
-import { Menu } from '@/components/Menu';
-import { ModeToggle } from '@/components/ModeToggle';
+import { Menu } from '@/components/Menu'
+import { ModeToggle } from '@/components/ModeToggle'
+import { TechCard } from '@/components/Card'
 
 import '@/styles/globals.css'
 ---
@@ -8,19 +9,19 @@ import '@/styles/globals.css'
 <script is:inline>
 	const getThemePreference = () => {
 		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-			return localStorage.getItem('theme');
+			return localStorage.getItem('theme')
 		}
-		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-	};
-	const isDark = getThemePreference() === 'dark';
-	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+	}
+	const isDark = getThemePreference() === 'dark'
+	document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
  
 	if (typeof localStorage !== 'undefined') {
 		const observer = new MutationObserver(() => {
-			const isDark = document.documentElement.classList.contains('dark');
-			localStorage.setItem('theme', isDark ? 'dark' : 'light');
-		});
-		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+			const isDark = document.documentElement.classList.contains('dark')
+			localStorage.setItem('theme', isDark ? 'dark' : 'light')
+		})
+		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
 	}
 </script>
 
@@ -33,9 +34,22 @@ import '@/styles/globals.css'
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Hello, welcome to my site!</h1>
-		<ModeToggle client:load />
-		<Menu client:load />
+		<header class="container flex justify-between p-5">
+			<h1>Hello, welcome to my site!</h1>
+			<ModeToggle client:load />
+		</header>
+		<aside class="container fixed bottom-8 w-full px-4 z-10">
+			<div class="my-0 mx-auto max-w-fit">
+				<Menu client:load />
+			</div>
+		</aside>
+		<main class="container">
+			<section class="flex gap-3 justify-between">
+				<TechCard title={'Frontend'} desc={"description"} content={"Coding, React, next etc."} />
+				<TechCard title={'Backend'} desc={"description"} content={"Databases, Serverless Lamda, StepFunctions, Node.js."} />
+				<TechCard title={'Design'} desc={"description"} content={"UX, creativity, figma"} />
+			</section>
+		</main>
 		
 	</body>
 </html>
