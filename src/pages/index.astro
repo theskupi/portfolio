@@ -4,33 +4,77 @@ import Card from '../components/Card.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span>Astro</span></h1>
-		<p>
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
+	 <header class="bg-gray-800 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div>
+							<h1 class="text-xl">Vlastimil Skupien</h1>
+													<h2>Developer</h2>
+						</div>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#about" class="hover:text-gray-400">About Me</a></li>
+                    <li><a href="#stack" class="hover:text-gray-400">Stack I'm Using</a></li>
+                    <li><a href="#projects" class="hover:text-gray-400">Projects</a></li>
+                    <li><a href="#contact" class="hover:text-gray-400">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+			<section id="about" class="py-8 px-4">
+					<div class="container mx-auto">
+							<h2 class="text-2xl font-bold mb-4">About Me</h2>
+							<p class="mb-4">
+									Insert a brief introduction about yourself here. You can include your background, what you're passionate about, and your goals as a software developer.
+							</p>
+					</div>
+			</section>
+			<section id="stack" class="bg-gray-200 py-8 px-4">
+					<div class="container mx-auto">
+							<h2 class="text-2xl font-bold mb-4">Stack I'm Using</h2>
+							<ul class="list-disc pl-8">
+									<li>Language: JavaScript, Python, etc.</li>
+									<li>Frameworks: React, Django, etc.</li>
+									<li>Tools: Docker, Git, etc.</li>
+							</ul>
+					</div>
+			</section>
+			<section id="projects" class="py-8 px-4">
+					<div class="container mx-auto">
+							<h2 class="text-2xl font-bold mb-4">Repository Showcase</h2>
+							<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+									<article class="bg-white p-4 shadow rounded">
+											<h3 class="font-bold mb-2">Project Name</h3>
+											<p class="mb-4">Project description...</p>
+											<a href="https://github.com/yourusername/projectname" class="text-blue-500 hover:text-blue-600">View Project</a>
+									</article>
+							</div>
+					</div>
+			</section>
+			<section id="contact" class="bg-gray-200 py-8 px-4">
+					<div class="container mx-auto">
+							<h2 class="text-2xl font-bold mb-4">Contact</h2>
+							<form action="submitForm()" method="post" class="bg-white p-4 shadow rounded">
+									<div class="mb-4">
+											<label for="name" class="block text-sm font-bold mb-2">Name:</label>
+											<input type="text" id="name" name="name" required class="w-full p-2 border rounded">
+									</div>
+									<div class="mb-4">
+											<label for="email" class="block text-sm font-bold mb-2">Email:</label>
+											<input type="email" id="email" name="email" required class="w-full p-2 border rounded">
+									</div>
+									<div class="mb-4">
+											<label for="message" class="block text-sm font-bold mb-2">Message:</label>
+											<textarea id="message" name="message" rows="4" required class="w-full p-2 border rounded"></textarea>
+									</div>
+									<button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Send</button>
+							</form>
+					</div>
+			</section>
+		</main>
+
+    <footer class="bg-gray-800 text-white p-4 text-center">
+        <p>Vlastimil Skupie © 2024</p>
+    </footer>
 </Layout>
