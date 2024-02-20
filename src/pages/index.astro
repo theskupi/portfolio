@@ -1,55 +1,36 @@
 ---
-import { Menu } from '@/components/Menu'
-import { ModeToggle } from '@/components/ModeToggle'
-import { TechCard } from '@/components/Card'
-
-import '@/styles/globals.css'
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
 ---
 
-<script is:inline>
-	const getThemePreference = () => {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-			return localStorage.getItem('theme')
-		}
-		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-	}
-	const isDark = getThemePreference() === 'dark'
-	document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
- 
-	if (typeof localStorage !== 'undefined') {
-		const observer = new MutationObserver(() => {
-			const isDark = document.documentElement.classList.contains('dark')
-			localStorage.setItem('theme', isDark ? 'dark' : 'light')
-		})
-		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
-	}
-</script>
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<header class="container flex justify-between p-5">
-			<h1>Hello, welcome to my site!</h1>
-			<ModeToggle client:load />
-		</header>
-		<aside class="container fixed bottom-8 w-full px-4 z-10">
-			<div class="my-0 mx-auto max-w-fit">
-				<Menu client:load />
-			</div>
-		</aside>
-		<main class="container">
-			<section class="flex gap-3 justify-between">
-				<TechCard title={'Frontend'} desc={"description"} content={"Coding, React, next etc."} />
-				<TechCard title={'Backend'} desc={"description"} content={"Databases, Serverless Lamda, StepFunctions, Node.js."} />
-				<TechCard title={'Design'} desc={"description"} content={"UX, creativity, figma"} />
-			</section>
-		</main>
-		
-	</body>
-</html>
+<Layout title="Welcome to Astro.">
+	<main>
+		<h1>Welcome to <span>Astro</span></h1>
+		<p>
+			To get started, open the directory <code>src/pages</code> in your project.<br />
+			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+		</p>
+		<ul role="list">
+			<Card
+				href="https://docs.astro.build/"
+				title="Documentation"
+				body="Learn how Astro works and explore the official API docs."
+			/>
+			<Card
+				href="https://astro.build/integrations/"
+				title="Integrations"
+				body="Supercharge your project with new frameworks and libraries."
+			/>
+			<Card
+				href="https://astro.build/themes/"
+				title="Themes"
+				body="Explore a galaxy of community-built starter themes."
+			/>
+			<Card
+				href="https://astro.build/chat/"
+				title="Community"
+				body="Come say hi to our amazing Discord community. ❤️"
+			/>
+		</ul>
+	</main>
+</Layout>
