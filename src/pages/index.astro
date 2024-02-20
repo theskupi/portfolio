@@ -1,80 +1,129 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from '../layouts/Layout.astro'
+import Card from '../components/Card.astro'
 ---
 
 <Layout title="Welcome to Astro.">
-	 <header class="bg-gray-800 text-white p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <div>
-							<h1 class="text-xl">Vlastimil Skupien</h1>
-													<h2>Developer</h2>
-						</div>
-            <nav>
-                <ul class="flex space-x-4">
-                    <li><a href="#about" class="hover:text-gray-400">About Me</a></li>
-                    <li><a href="#stack" class="hover:text-gray-400">Stack I'm Using</a></li>
-                    <li><a href="#projects" class="hover:text-gray-400">Projects</a></li>
-                    <li><a href="#contact" class="hover:text-gray-400">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+	<header class="bg-gray-800 text-white p-4">
+		<div class="container mx-auto flex justify-between items-center">
+			<div>
+				<h1 class="text-xl">Vlastimil Skupien</h1>
+				<h2>Developer</h2>
+			</div>
+			<nav>
+				<ul class="flex space-x-4">
+					<li><a href="#about" class="hover:text-gray-400">About Me</a></li>
+					<li>
+						<a href="#stack" class="hover:text-gray-400">Stack I'm Using</a>
+					</li>
+					<li><a href="#projects" class="hover:text-gray-400">Projects</a></li>
+					<li><a href="#contact" class="hover:text-gray-400">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
 
-    <main>
-			<section id="about" class="py-8 px-4">
-					<div class="container mx-auto">
-							<h2 class="text-2xl font-bold mb-4">About Me</h2>
-							<p class="mb-4">
-									Insert a brief introduction about yourself here. You can include your background, what you're passionate about, and your goals as a software developer.
-							</p>
+	<main>
+		<section id="about" class="py-8 px-4">
+			<div class="container mx-auto">
+				<h2 class="text-2xl font-bold mb-4">About Me</h2>
+				<p class="mb-4">
+					Insert a brief introduction about yourself here. You can include your
+					background, what you're passionate about, and your goals as a software
+					developer.
+				</p>
+			</div>
+		</section>
+		<section id="stack" class="bg-gray-200 py-8 px-4">
+			<div class="container mx-auto">
+				<h2 class="text-2xl font-bold mb-4">Stack I'm Using</h2>
+				<ul class="list-disc pl-8">
+					<li>Language: JavaScript, Python, etc.</li>
+					<li>Frameworks: React, Django, etc.</li>
+					<li>Tools: Docker, Git, etc.</li>
+				</ul>
+			</div>
+		</section>
+		<section id="projects" class="py-8 px-4">
+			<div class="container mx-auto">
+				<h2 class="text-2xl font-bold mb-4">Repository Showcase</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+					<article class="bg-white p-4 shadow rounded">
+						<h3 class="font-bold mb-2">Project Name</h3>
+						<p class="mb-4">Project description...</p>
+						<a
+							href="https://github.com/yourusername/projectname"
+							class="text-blue-500 hover:text-blue-600">View Project</a
+						>
+					</article>
+				</div>
+			</div>
+		</section>
+		<section id="contact" class="bg-gray-200 py-8 px-4">
+			<div class="container mx-auto">
+				<h2 class="text-2xl font-bold mb-4">Contact</h2>
+				<form
+					action="submitForm()"
+					method="post"
+					class="bg-white p-4 shadow rounded"
+				>
+					<div class="mb-4">
+						<label for="name" class="block text-sm font-bold mb-2">Name:</label>
+						<input
+							type="text"
+							id="name"
+							name="name"
+							required
+							class="w-full p-2 border rounded"
+						/>
 					</div>
-			</section>
-			<section id="stack" class="bg-gray-200 py-8 px-4">
-					<div class="container mx-auto">
-							<h2 class="text-2xl font-bold mb-4">Stack I'm Using</h2>
-							<ul class="list-disc pl-8">
-									<li>Language: JavaScript, Python, etc.</li>
-									<li>Frameworks: React, Django, etc.</li>
-									<li>Tools: Docker, Git, etc.</li>
-							</ul>
+					<div class="mb-4">
+						<label for="email" class="block text-sm font-bold mb-2"
+							>Email:</label
+						>
+						<input
+							type="email"
+							id="email"
+							name="email"
+							required
+							class="w-full p-2 border rounded"
+						/>
 					</div>
-			</section>
-			<section id="projects" class="py-8 px-4">
-					<div class="container mx-auto">
-							<h2 class="text-2xl font-bold mb-4">Repository Showcase</h2>
-							<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-									<article class="bg-white p-4 shadow rounded">
-											<h3 class="font-bold mb-2">Project Name</h3>
-											<p class="mb-4">Project description...</p>
-											<a href="https://github.com/yourusername/projectname" class="text-blue-500 hover:text-blue-600">View Project</a>
-									</article>
-							</div>
+					<div class="mb-4">
+						<label for="message" class="block text-sm font-bold mb-2"
+							>Message:</label
+						>
+						<textarea
+							id="message"
+							name="message"
+							rows="4"
+							required
+							class="w-full p-2 border rounded"></textarea>
 					</div>
-			</section>
-			<section id="contact" class="bg-gray-200 py-8 px-4">
-					<div class="container mx-auto">
-							<h2 class="text-2xl font-bold mb-4">Contact</h2>
-							<form action="submitForm()" method="post" class="bg-white p-4 shadow rounded">
-									<div class="mb-4">
-											<label for="name" class="block text-sm font-bold mb-2">Name:</label>
-											<input type="text" id="name" name="name" required class="w-full p-2 border rounded">
-									</div>
-									<div class="mb-4">
-											<label for="email" class="block text-sm font-bold mb-2">Email:</label>
-											<input type="email" id="email" name="email" required class="w-full p-2 border rounded">
-									</div>
-									<div class="mb-4">
-											<label for="message" class="block text-sm font-bold mb-2">Message:</label>
-											<textarea id="message" name="message" rows="4" required class="w-full p-2 border rounded"></textarea>
-									</div>
-									<button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Send</button>
-							</form>
-					</div>
-			</section>
-		</main>
+					<button
+						type="submit"
+						class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+						>Send</button
+					>
+				</form>
+			</div>
+		</section>
+	</main>
 
-    <footer class="bg-gray-800 text-white p-4 text-center">
-        <p>Vlastimil Skupie © 2024</p>
-    </footer>
+	<svg
+		width="15"
+		height="15"
+		viewBox="0 0 15 15"
+		fill="none"
+		xmlns="http://www.w3.org/2000/svg"
+		><path
+			d="M2 1C1.44772 1 1 1.44772 1 2V13C1 13.5523 1.44772 14 2 14H13C13.5523 14 14 13.5523 14 13V2C14 1.44772 13.5523 1 13 1H2ZM3.05 6H4.95V12H3.05V6ZM5.075 4.005C5.075 4.59871 4.59371 5.08 4 5.08C3.4063 5.08 2.925 4.59871 2.925 4.005C2.925 3.41129 3.4063 2.93 4 2.93C4.59371 2.93 5.075 3.41129 5.075 4.005ZM12 8.35713C12 6.55208 10.8334 5.85033 9.67449 5.85033C9.29502 5.83163 8.91721 5.91119 8.57874 6.08107C8.32172 6.21007 8.05265 6.50523 7.84516 7.01853H7.79179V6.00044H6V12.0047H7.90616V8.8112C7.8786 8.48413 7.98327 8.06142 8.19741 7.80987C8.41156 7.55832 8.71789 7.49825 8.95015 7.46774H9.02258C9.62874 7.46774 10.0786 7.84301 10.0786 8.78868V12.0047H11.9847L12 8.35713Z"
+			fill="currentColor"
+			fill-rule="evenodd"
+			clip-rule="evenodd"></path></svg
+	>
+
+	<footer class="bg-gray-800 text-white p-4 text-center">
+		<p>Vlastimil Skupien © 2024</p>
+	</footer>
 </Layout>
