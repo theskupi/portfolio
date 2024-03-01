@@ -17,26 +17,29 @@ enum NavigationLinks {
 		<span class="h-3 w-3 rounded-full bg-green-400"></span>
 		<span class="ml-2 text-xs text-gray-500">vlastimil_skupien</span>
 	</div>
-	<nav class="flex text-sm text-white *:border-r-4 *:border-t-4 *:px-12 *:py-2">
+	<nav
+		class="flex gap-1 bg-gray-800 text-sm text-white *:border-t-4 *:bg-gray-700 *:px-12 *:py-2"
+	>
 		<a
-			class=`${pathname === NavigationLinks.home && 'border-t-yellow-400'} border-gray-800`
+			class=`${pathname === NavigationLinks.home && 'border-t-red-400 text-yellow-300'} border-gray-800 hover:text-yellow-300`
 			href={NavigationLinks.home}>_hello</a
 		>
 		<a
-			class=`${pathname === NavigationLinks.about && 'border-t-yellow-400'} border-gray-800`
+			class=`${pathname === NavigationLinks.about &&'border-t-red-400 text-yellow-300'} border-gray-800 hover:text-yellow-300`
 			href={NavigationLinks.about}>_about</a
 		>
 		<a
-			class=`${pathname === NavigationLinks.skills && 'border-t-yellow-400'} border-gray-800`
+			class=`${pathname === NavigationLinks.skills &&'border-t-red-400 text-yellow-300'} border-gray-800 hover:text-yellow-300`
 			href={NavigationLinks.skills}>_skills</a
 		>
 		<a
-			class=`${pathname === NavigationLinks.projects && 'border-t-yellow-400'} border-gray-800`
+			class=`${pathname === NavigationLinks.projects &&'border-t-red-400 text-yellow-300'} border-gray-800 hover:text-yellow-300`
 			href={NavigationLinks.projects}>_projects</a
 		>
 		<a
-			class=`${pathname === NavigationLinks.contacts && 'border-t-yellow-400'} border-gray-800`
+			class=`${pathname === NavigationLinks.contacts &&'border-t-red-400 text-yellow-300'} border-gray-800 hover:text-yellow-300`
 			href={NavigationLinks.contacts}>_contacts</a
 		>
+		<span class="grow border-gray-800"></span>
 	</nav>
 </header>

@@ -2,6 +2,78 @@
 import Layout from '../layouts/Layout.astro'
 ---
 
+<style>
+	.line-numbers::before,
+	.indentation-lines::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 50%;
+		display: block;
+		background-image: linear-gradient(to top, transparent, rgb(31 41 55));
+	}
+	.line-numbers::after,
+	.indentation-lines::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 50%;
+		display: block;
+		background-image: linear-gradient(to bottom, transparent, rgb(31 41 55));
+	}
+</style>
+
 <Layout title="Vlastimil Skupien - web dev">
-	<main>Index page</main>
+	<main class="h-full">
+		<div class="code-editor relative ml-6 flex h-full items-center gap-8">
+			<div class="line-numbers relative *:p-1">
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+				<div>4</div>
+				<div>5</div>
+				<div>6</div>
+				<div>7</div>
+				<div>8</div>
+				<div>9</div>
+				<div>10</div>
+				<div>11</div>
+				<div>12</div>
+				<div>13</div>
+				<div>14</div>
+				<div>15</div>
+				<div>16</div>
+				<div>17</div>
+				<div>18</div>
+				<div>19</div>
+				<div>20</div>
+			</div>
+			<div class="indentation-lines relative flex h-[70%] items-center gap-8">
+				<div class="h-full w-[1px] bg-gray-500"></div>
+				<div class="h-[70%] w-[1px] bg-gray-500"></div>
+				<div class="h-[50%] w-[1px] bg-gray-500"></div>
+			</div>
+			<div class="code-content *:p-1">
+				<div class="code-line text-yellow-300">{`<Hello />`},</div>
+				<div class="code-line">
+					<span class="text-blue-500">andWelcome()</span>
+					<span class="text-yellow-300"> &#123;</span>
+				</div>
+				<div class="code-line indent-4">
+					"my name is <span class="text-green-300">Vlastik</span> 👋
+				</div>
+				<div class="code-line indent-4">
+					I am mainly <span class="text-purple-500">web developer</span> and
+				</div>
+				<div class="code-line indent-4">partly UX designer.</div>
+				<div class="code-line indent-4">I'm dealing with this stuff</div>
+				<div class="code-line indent-4">
+					for more than <span class="text-red-400">5 years</span>"
+				</div>
+				<div class="code-line"><span class="text-yellow-300">&#125;</span></div>
+			</div>
+		</div>
+	</main>
 </Layout>
