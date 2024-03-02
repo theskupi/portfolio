@@ -1,100 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Typewriter from '../components/Typewriter.astro'
+import TypewriterHeroSection from '../components/TypewriterHeroSection.astro'
+import LineCounter from '../components/LineCounter.astro'
 ---
 
-<style>
-	.line-numbers::before,
-	.indentation-lines::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		width: 100%;
-		height: 50%;
-		display: block;
-		background-image: linear-gradient(to top, transparent, rgb(31 41 55));
-	}
-	.line-numbers::after,
-	.indentation-lines::after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		width: 100%;
-		height: 50%;
-		display: block;
-		background-image: linear-gradient(to bottom, transparent, rgb(31 41 55));
-	}
-
-	pre {
-		counter-reset: line var(--line-num, 0);
-	}
-	pre span {
-		counter-increment: line;
-	}
-	pre span::before {
-		content: counter(line) ' ';
-	}
-</style>
-
 <Layout title="Vlastimil Skupien - web dev">
-	<main class="flex h-full items-center gap-32">
-		<section class="code-editor relative flex h-full items-center gap-8">
-			<pre
-				class="line-numbers relative leading-loose *:p-1"
-				style="--line-num: 0;">
-				<span />
-				<span />
-				<span />
-				<span />
-				<span />
-				<span />
-				<span />
-				<span />
-				<span />
-				<span />
-				<span />
-				<span />
-				<span />
-				<span />
-				<span />
-				<span />
-				<span />
-				<span />
-				<span />
-				<span />
-			</pre>
+	<main class="flex h-full items-center gap-52">
+		<section class="relative flex h-full items-center gap-8">
+			<LineCounter lines={20} startRow={0} />
 			<div class="indentation-lines relative flex h-[70%] items-center gap-8">
 				<div class="h-full w-[1px] bg-gray-500"></div>
 				<div class="h-[70%] w-[1px] bg-gray-500"></div>
 				<div class="h-[50%] w-[1px] bg-gray-500"></div>
 			</div>
-			<div class="code-content *:p-1">
-				<div class="code-line text-yellow-300">{`<Hello />`},</div>
-				<div class="code-line">
+			<div class="*:p-1">
+				<div class="text-yellow-300">{`<Hello />`},</div>
+				<div>
 					<span class="text-blue-500">andWelcome()</span>
 					<span class="text-yellow-300"> &#123;</span>
 				</div>
-				<div class="code-line indent-4">
+				<div class="indent-4">
 					my name is <span class="text-green-300">Vlastik</span> 👋
 				</div>
-				<div class="code-line indent-4">
+				<div class="indent-4">
 					I am mainly <span class="text-purple-500">web developer</span> and
 				</div>
-				<div class="code-line indent-4">partly UX designer.</div>
-				<div class="code-line indent-4">I'm dealing with this stuff</div>
-				<div class="code-line indent-4">
-					for more than <span class="text-red-400">5 years</span>
+				<div class="indent-4">partly UX designer with</div>
+				<div class="indent-4">
+					more than <span class="text-red-400">5 years</span> experience
 				</div>
-				<div class="code-line"><span class="text-yellow-300">&#125;</span></div>
+				<div><span class="text-yellow-300">&#125;</span></div>
 			</div>
 		</section>
 
-		<section>
-			<h1 class="font-serif text-8xl uppercase text-green-300">
-				&#60;Vlastimil <br /> Skupien&#62;
-			</h1>
-			<h2 class="uppercas text-6xl">//I'll help you</h2>
-			<Typewriter />
-		</section>
+		<TypewriterHeroSection />
 	</main>
 </Layout>
