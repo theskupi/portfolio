@@ -1,7 +1,52 @@
 ---
+import { Image } from 'astro:assets'
+import profilePic from '../images/profile_pic.webp'
+
+import LineCounter from '../components/LineCounter.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 
-<Layout title="Welcome to Astro.">
-	<main class="mb-auto">About page</main>
+<style>
+	.breakpoint-line {
+		background-image: linear-gradient(
+			to right,
+			transparent,
+			rgba(225, 79, 79, 50%) 10%,
+			transparent
+		);
+	}
+</style>
+<Layout title="Vlastimil Skupien - about">
+	<main class="flex h-full items-center">
+		<section class="relative flex h-full w-[60%] items-center">
+			<LineCounter lines={15} startRow={20} size="sm" />
+			<div class="*:p-x-1 mr-4 mt-8 text-sm">
+				<p class="breakpoint-line relative flex items-center gap-5 pl-2">
+					<span class="h-3 w-3 rounded-full bg-red-500"></span>
+					<span class="text-yellow-300">{`<AboutMe />`}</span>
+				</p>
+				<p class="mb-7 pl-10 leading-loose">
+					As a highly skilled and motivated middle front-end developer I am
+					passionate about creating dynamic, user-friendly interfaces that
+					engage and delight users.
+				</p>
+				<p class="mb-7 pl-10 leading-loose">
+					I am confident in my ability to bring value to any project and an
+					always eager to learn and grow as a developer. Whether working on new
+					features, debugging complex issues, or exploring new technologies, I
+					approach each challenge with dedication and a commitment to delivering
+					the best possible solution.
+				</p>
+				<p class="pl-10 leading-loose">
+					In summary, I am a talented and driven middle front-end developer with
+					a passion for creating exceptional user experiences. I am eager to
+					bring my skills and expertise to a new challenge and am confident in
+					my ability to make a meaningful impact.
+				</p>
+			</div>
+		</section>
+		<aside class="absolute left-1/2 right-8 -z-10 max-w-xl">
+			<Image src={profilePic} alt="Profile picture" />
+		</aside>
+	</main>
 </Layout>

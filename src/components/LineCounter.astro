@@ -2,9 +2,10 @@
 interface Props {
 	lines: number
 	startRow: number
+	size: 'sm' | 'lg'
 }
 
-const { lines, startRow } = Astro.props
+const { lines, startRow, size } = Astro.props
 ---
 
 <style>
@@ -41,7 +42,7 @@ const { lines, startRow } = Astro.props
 </style>
 
 <pre
-	class="line-numbers relative ml-4 leading-loose"
+	class=`${size === 'sm' ? 'text-sm' : 'text-base'} line-numbers relative ml-4 leading-loose`
 	style=`--line-num: ${startRow};`>
     {Array.from({ length: lines }, (_, i) => (
       <div />
