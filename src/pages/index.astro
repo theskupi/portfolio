@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import Typewriter from '../components/Typewriter.astro'
 ---
 
 <style>
@@ -36,8 +37,8 @@ import Layout from '../layouts/Layout.astro'
 </style>
 
 <Layout title="Vlastimil Skupien - web dev">
-	<main class="h-full">
-		<div class="code-editor relative flex h-full items-center gap-8">
+	<main class="flex h-full items-center gap-32">
+		<section class="code-editor relative flex h-full items-center gap-8">
 			<pre
 				class="line-numbers relative leading-loose *:p-1"
 				style="--line-num: 0;">
@@ -74,7 +75,7 @@ import Layout from '../layouts/Layout.astro'
 					<span class="text-yellow-300"> &#123;</span>
 				</div>
 				<div class="code-line indent-4">
-					"my name is <span class="text-green-300">Vlastik</span> 👋
+					my name is <span class="text-green-300">Vlastik</span> 👋
 				</div>
 				<div class="code-line indent-4">
 					I am mainly <span class="text-purple-500">web developer</span> and
@@ -82,10 +83,18 @@ import Layout from '../layouts/Layout.astro'
 				<div class="code-line indent-4">partly UX designer.</div>
 				<div class="code-line indent-4">I'm dealing with this stuff</div>
 				<div class="code-line indent-4">
-					for more than <span class="text-red-400">5 years</span>"
+					for more than <span class="text-red-400">5 years</span>
 				</div>
 				<div class="code-line"><span class="text-yellow-300">&#125;</span></div>
 			</div>
-		</div>
+		</section>
+
+		<section>
+			<h1 class="font-serif text-8xl uppercase text-green-300">
+				&#60;Vlastimil <br /> Skupien&#62;
+			</h1>
+			<h2 class="uppercas text-6xl">//I'll help you</h2>
+			<Typewriter />
+		</section>
 	</main>
 </Layout>

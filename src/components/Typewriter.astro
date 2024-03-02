@@ -1,0 +1,66 @@
+<style>
+	.phrase-1,
+	.phrase-2 {
+		animation-duration: 10s;
+		animation-iteration-count: infinite;
+	}
+	.phrase-1 {
+		animation-name: phrase-1;
+		animation-timing-function: steps(4, end);
+	}
+	.phrase-2 {
+		animation-name: phrase-2;
+		animation-timing-function: steps(6, end);
+	}
+	.phrase-1::after,
+	.phrase-2::after {
+		content: '';
+		position: absolute;
+		display: inline-block;
+		width: 8px;
+		height: 100%;
+		background-color: rgb(253 224 71);
+		right: 0;
+		animation: caret infinite;
+		animation-duration: 1s;
+		animation-timing-function: steps(1, end);
+	}
+	@keyframes caret {
+		0%,
+		100% {
+			right: 0;
+		}
+		50% {
+			right: 100%;
+		}
+	}
+	@keyframes phrase-1 {
+		0%,
+		50%,
+		100% {
+			width: 0;
+		}
+		10%,
+		40% {
+			width: 100%;
+		}
+	}
+	@keyframes phrase-2 {
+		0%,
+		50%,
+		100% {
+			width: 0;
+		}
+
+		60%,
+		90% {
+			width: 100%;
+		}
+	}
+</style>
+
+<h2
+	class="inline-block uppercase text-purple-500 *:relative *:inline-block *:w-0 *:overflow-hidden *:whitespace-nowrap *:text-6xl"
+>
+	<span class="phrase-1">code</span><span class="phrase-2">design</span>
+</h2>
