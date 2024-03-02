@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<style>
+	.folder {
+		position: relative;
+		display: inline-block;
+		z-index: 2;
+		padding: 0;
+		margin: 0;
+		outline: 0;
+		text-align: left;
+	}
+
+	/* style for the button */
+	.folder:before {
+		content: '\2630 \a0 Menu';
+		color: white;
+		padding: 5px 10px;
+		border: 1px solid #555;
+		border-radius: 3px;
+		background: #96305e;
+		background: -moz-linear-gradient(
+			top,
+			#96305e 0%,
+			#822956 10%,
+			#822956 90%,
+			#751749 100%
+		);
+		background: -webkit-linear-gradient(
+			top,
+			#96305e 0%,
+			#822956 10%,
+			#822956 90%,
+			#751749 100%
+		);
+		background: linear-gradient(
+			to bottom,
+			#96305e 0%,
+			#822956 10%,
+			#822956 90%,
+			#751749 100%
+		);
+	}
+
+	.folder:focus {
+		pointer-events: none;
+	}
+
+	/* If :focus detected the dropdown folder is displayed by making it visible */
+	.folder:focus .folder-dropdown {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	/* style for the dropdown box */
+	.folder-dropdown {
+		background-color: #364656;
+		width: auto;
+		margin: 3px 0 0 0;
+		padding: 10px;
+		border-radius: 3px;
+		border: 1px black solid;
+		border-radius: 3px;
+		pointer-events: auto;
+		position: absolute;
+		z-index: 1;
+		opacity: 0;
+		visibility: hidden;
+		transition: visibility 1s;
+		background: #1f8bd3;
+		background: linear-gradient(
+			to bottom,
+			#1f8bd3 0%,
+			#1b7aba 10%,
+			#1b7aba 90%,
+			#1b61b7 100%
+		);
+	}
+
+	.folder-dropdown a {
+		background: transparent;
+		border: none;
+		outline: 0;
+		display: block;
+		color: white;
+		text-decoration: none;
+		width: 160px;
+		padding: 5px;
+	}
+</style>
+
+<Layout title="Vlastimil Skupien - web dev">
+	<main class="h-full">
+		<aside class="h-full w-60 border-y-4 border-gray-800 bg-gray-700">
+			<div class="folder">
+				<div class="folder-dropdown">
+					<a href="">FrontEnd</a>
+					<a href="">BackEnd</a>
+					<a href="">DevOps</a>
+				</div>
+			</div>
+		</aside>
+		<section></section>
+	</main>
+</Layout>
