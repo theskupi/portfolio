@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Explorer from '../components/Explorer.astro'
+---
+
+<Layout title="Vlastimil Skupien - web dev">
+	<main class="flex h-full items-center">
+		<Explorer />
+		<section class="mx-auto w-2/3">
+			<slot />
+		</section>
+	</main>
+</Layout>

@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets'
+import { Picture } from 'astro:assets'
 import profilePic from '../images/profile_pic.webp'
 
 import LineCounter from '../components/LineCounter.astro'
@@ -18,6 +18,9 @@ import Layout from '../layouts/Layout.astro'
 </style>
 <Layout title="Vlastimil Skupien - about">
 	<main class="flex h-full items-center">
+		<aside class="absolute left-1/2 -z-10 max-w-md">
+			<Picture src={profilePic} alt="Profile picture" />
+		</aside>
 		<section class="relative flex h-full w-[60%] items-center">
 			<LineCounter lines={15} startRow={20} size="sm" />
 			<div class="*:p-x-1 mr-4 mt-8 text-sm">
@@ -45,8 +48,5 @@ import Layout from '../layouts/Layout.astro'
 				</p>
 			</div>
 		</section>
-		<aside class="absolute left-1/2 right-8 -z-10 max-w-xl">
-			<Image src={profilePic} alt="Profile picture" />
-		</aside>
 	</main>
 </Layout>
