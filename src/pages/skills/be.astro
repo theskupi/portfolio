@@ -1,5 +1,37 @@
 ---
 import SkillsLayout from '../../layouts/SkillsLayout.astro'
+import TechBadge from '../../components/TechBadge.astro'
+
+enum Techs {
+	NODE = 'Node.js',
+	TRPC = 'tRPC',
+	ZOD = 'Zod',
+	GRAPHQL = 'GraphQL',
+	REST = 'REST API',
+	MONGO = 'MongoDB',
+	POSTGRE = 'PostgreSQL',
+	MYSQL = 'MySQL',
+	PRISMA = 'Prisma',
+	WORDPRESS = 'WordPress',
+	OPENCART = 'OpenCart',
+	TWIG = 'Twig'
+}
 ---
 
-<SkillsLayout> BE Skills </SkillsLayout>
+<SkillsLayout>
+	<div>
+		<h1 class="mb-4">//BackEnd Skills</h1>
+		<p>
+			I have the most experience with the JavaScript world to which I have
+			dedicated most of my career. We are currently writing our Node.js backend
+			in TypeScript together with tRPC on API part. tRPRC is a quite new thing,
+			before that we were using GraphQL mostly. On the other hand, PHP is
+			marking the begginings of my career where I was moving in WordPress world.
+			Python was our number 1 language at school, but that is very long time
+			ago.
+		</p>
+		<div class="mt-4 flex flex-wrap gap-2">
+			{Object.values(Techs).map((tech) => <TechBadge>{tech}</TechBadge>)}
+		</div>
+	</div>
+</SkillsLayout>

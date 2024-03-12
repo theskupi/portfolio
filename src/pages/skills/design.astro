@@ -1,5 +1,27 @@
 ---
 import SkillsLayout from '../../layouts/SkillsLayout.astro'
+import TechBadge from '../../components/TechBadge.astro'
+
+enum Techs {
+	FIGMA = 'Figma',
+	PHOTOSHOP = 'Photoshop',
+	ILLUSTRATOR = 'Illustrator',
+	AI = 'Midjourney'
+}
 ---
 
-<SkillsLayout> Design Skills </SkillsLayout>
+<SkillsLayout
+	><div>
+		<h1 class="mb-4">Design</h1>
+		<p>
+			In my current position is part of my capacity allocated in design. We
+			create designs in Figma, I have experience with design process from
+			wireframes to corporate identity design. Beside work stuff, I designed for
+			example our team t-shirts and glasses. Lately I've been enjoying
+			experimenting with AI like Midjourney.
+		</p>
+		<div class="mt-4 flex flex-wrap gap-2">
+			{Object.values(Techs).map((tech) => <TechBadge>{tech}</TechBadge>)}
+		</div>
+	</div>
+</SkillsLayout>

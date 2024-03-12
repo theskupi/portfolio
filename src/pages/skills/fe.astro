@@ -1,5 +1,31 @@
 ---
 import SkillsLayout from '../../layouts/SkillsLayout.astro'
+import TechBadge from '../../components/TechBadge.astro'
+
+enum Techs {
+	REACT = 'React',
+	NEXTJS = 'Next.js',
+	ASTRO = 'Astro',
+	GATSBY = 'Gatsby',
+	REMIX = 'Remix',
+	VITE = 'Vite',
+	TAILWIND = 'Tailwind',
+	STYLED_COMPONENTS = 'Styled Components',
+	SCSS = 'SCSS',
+	FORMIK = 'Formik',
+	REACT_HOOK_FORMS = 'React Hook Forms',
+	YUP = 'Yup',
+	TANSTACK_QUERY = 'Tanstack Query',
+	TANSTACK_TABLE = 'Tanstack Table',
+	STORYBOOK = 'Storybook'
+}
 ---
 
-<SkillsLayout> FE Skills </SkillsLayout>
+<SkillsLayout>
+	<div>
+		<h1 class="mb-4">FrontEnd Skills</h1><p>Frontend povidani</p>
+		<div class="mt-4 flex flex-wrap gap-2">
+			{Object.values(Techs).map((tech) => <TechBadge>{tech}</TechBadge>)}
+		</div>
+	</div>
+</SkillsLayout>
